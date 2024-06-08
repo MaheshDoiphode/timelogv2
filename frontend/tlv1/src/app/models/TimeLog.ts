@@ -1,0 +1,37 @@
+export interface TimeLog {
+    employeeName?: string;
+    employeeId: string;
+    activityType?: string;
+    projectName?: string;
+    projectCode?: string;
+    costCentre?: string;
+    svcDelCentre?: string;
+    projectType?: string;
+    projectManager?: string;
+    projectDirector?: string;
+    projectDeliveryLead?: string;
+    level1?: string;
+    level2?: string;
+    activityGroup?: string;
+    taskType?: string;
+    taskUniqueId?: string;
+    taskName?: string;
+    remark?: string;
+    period?: Date;
+    timeLogDate?: Date;
+    effort?: number;
+    totalEffort?: number;
+    createdDate?: Date;
+    updatedTime?: Date;
+    homeBaseDivision?: string;
+    homeBaseCentre?: string;
+    homeBaseTeam?: string;
+    projectBaseDivision?: string;
+    projectBaseCentre?: string;
+    projectBaseTeam?: string;
+    joiningDate?: Date;
+    leavingDate?: Date;
+    projectPlannedEffortsInGteledmsOnly?: number;
+    amforbidsupport?: string;
+    ambusinesscentreforbidsupport?: string;
+}

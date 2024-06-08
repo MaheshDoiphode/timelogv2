@@ -1,0 +1,274 @@
+<app-header></app-header>
+<div class="md:flex md:flex-wrap md:justify-between">
+    <div class="md:w-1/3 ">
+        <div class="w-80 h-80 bg-pattern ml-14 -mt-10">
+            <img class="w-40 h-40 rounded-tr-3xl rounded-bl-3xl rounded-br-3xl" src="../../assets/AshishSir.PNG" />
+        </div>
+        <div class="-mt-8 ml-4 grid grid-cols-2 gap-4">
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-bold mb-2">Average Efforts</h2>
+                <p class="text-lg">{{averageEfforts}}</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-bold mb-2">Average Total Efforts</h2>
+                <p class="text-lg">{{averageTotalEfforts}}</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-bold mb-2">Employee Efforts</h2>
+                <p class="text-lg">{{empEfforts}}</p>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <h2 class="text-xl font-bold mb-2">Employee Total Efforts</h2>
+                <p class="text-lg">{{empTotalEfforts}}</p>
+            </div>
+        </div>
+
+        <div class="col2">
+            <div class="piechart flex-grow">
+                <div class="w-sm md:h-full md:max-w-md w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+                    <div class="flex justify-between">
+                        <div>
+                            <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">Employee
+                                Count
+                                Per
+                                Activity</h5>
+                            <p class="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+                        </div>
+                        <div class="flex items-center px-2.5 py-0.5 text-base font-semibold cursor-pointer text-center"
+                            (click)="openModal('doughnut')">
+                            <span class="material-symbols-outlined">
+                                pinch_zoom_out
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full skeleton-loader">
+                        <app-chart-skeleton *ngIf="isLoading; else pieChartContent"></app-chart-skeleton>
+                        <ng-template #pieChartContent>
+                            <canvas baseChart [type]="'doughnut'" [data]="doughnutChartConfig.data"></canvas>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+
+            <div class="polarAreaChart flex-grow">
+                <div class="w-sm md:h-full md:max-w-md w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+                    <div class="flex justify-between">
+                        <div>
+                            <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">Employee
+                                Count
+                                Per
+                                Project Manager</h5>
+                            <p class="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+                        </div>
+                        <div class="flex items-center px-2.5 py-0.5 text-base font-semibold cursor-pointer text-center"
+                            (click)="openModal('polarArea')">
+                            <span class="material-symbols-outlined">
+                                pinch_zoom_out
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w-full h-full skeleton-loader">
+                        <app-chart-skeleton *ngIf="isLoading; else polarAreaChartContent"></app-chart-skeleton>
+                        <ng-template #polarAreaChartContent>
+                            <canvas baseChart [type]="'polarArea'" [data]="polarAreaChartConfig.data"></canvas>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="md:w-1/3 p-4">
+        <div class="linechart -mt-10">
+            <div class="w-sm md:h-full md:max-w-md w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+                <div class="flex justify-between">
+                    <div>
+                        <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">Employee Count
+                            Per
+                            Month</h5>
+                        <p class="text-base font-normal text-gray-500 dark:text-gray-400">Last 12 months</p>
+                    </div>
+                    <div class="flex items-center px-2.5 py-0.5 text-base font-semibold cursor-pointer text-center"
+                        (click)="openModal('line')">
+                        <span class="material-symbols-outlined">
+                            pinch_zoom_out
+                        </span>
+                    </div>
+                </div>
+                <div class="w-full h-full skeleton-loader">
+                    <app-chart-skeleton *ngIf="isLoading; else lineChartContent"></app-chart-skeleton>
+                    <ng-template #lineChartContent>
+                        <canvas baseChart [type]="'line'" [data]="config.data"></canvas>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="md:w-1/3 p-4">
+        <div class="employeeinfo -mt-10">
+            <fieldset class="text-xl max-w-sm border-4 border-green-500 rounded-lg p-2">
+                <legend class="group-select px-2 text-xl font-semibold underline decoration-green-500/60 decoration-2">
+                    <div class="m-1 hs-dropdown relative flex flex-col" data-hs-dropdown-auto-close="inside">
+
+                        <button id="hs-dropdown-item-checkbox" type="button" (click)="toggleDropdown()"
+                            class="hs-dropdown-toggle py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 flex-shrink-0">
+                            {{selectedGroup}}
+                            <svg class="hs-dropdown-open:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2 mt-12 dark:bg-neutral-800 dark:border dark:border-neutral-700 left-0 absolute"
+                            aria-labelledby="hs-dropdown-item-checkbox"
+                            [ngClass]="{'opacity-100 block': isDropdownOpen, 'opacity-0 hidden': !isDropdownOpen}">
+                            <div *ngFor="let group of groups"
+                                class="relative flex items-start py-2 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700">
+                                <div class="flex items-center h-5 mt-1">
+                                    <input id="hs-dropdown-item-radio-{{group}}" name="hs-dropdown-item-radio"
+                                        type="radio" (click)="selectedGroup = group; toggleDropdown()"
+                                        class="shrink-0 border-gray-200 rounded-full text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-800"
+                                        [(ngModel)]="selectedGroup" [value]="group">
+                                </div>
+                                <label for="hs-dropdown-item-radio-{{group}}" class="ms-3.5">
+                                    <span
+                                        class="block text-sm font-semibold text-gray-800 dark:text-neutral-300">{{group}}</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </legend>
+                <app-info-skeleton *ngIf="isGroupLoading; else groupContent"></app-info-skeleton>
+                <ng-template #groupContent>
+                    <div class="flex flex-col gap-2 px-2 text-md">
+                        <ng-container *ngIf="selectedGroup === 'Employee Details'">
+                            <p>Employee Name: {{timelog?.employeeName}}</p>
+                            <hr>
+                            <p>Employee ID: {{timelog?.employeeId}}</p>
+                            <hr>
+                            <p>Home Base Division: {{timelog?.homeBaseDivision}}</p>
+                            <hr>
+                            <p>Home Base Centre: {{timelog?.homeBaseCentre}}</p>
+                            <hr>
+                            <p>Home Base Team: {{timelog?.homeBaseTeam}}</p>
+                            <hr>
+                            <p>Joining Date: {{timelog?.joiningDate}}</p>
+                            <hr>
+                            <p>Leaving Date: {{timelog?.leavingDate}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="selectedGroup === 'Project Details'">
+                            <p>Project Type: {{timelog?.projectType}}</p>
+                            <hr>
+                            <p>Project Name: {{timelog?.projectName}}</p>
+                            <hr>
+                            <p>Project Code: {{timelog?.projectCode}}</p>
+                            <hr>
+                            <p>Project Manager: {{timelog?.projectManager}}</p>
+                            <hr>
+                            <p>Project Director: {{timelog?.projectDirector}}</p>
+                            <hr>
+                            <p>Project Delivery Lead: {{timelog?.projectDeliveryLead}}</p>
+                            <hr>
+                            <p>Project Planned Efforts In Gteledms Only:
+                                {{timelog?.projectPlannedEffortsInGteledmsOnly}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="selectedGroup === 'Project Location Information'">
+                            <p>Cost Centre: {{timelog?.costCentre}}</p>
+                            <hr>
+                            <p>Service Delivery Centre: {{timelog?.svcDelCentre}}</p>
+                            <hr>
+                            <p>Project Base Division: {{timelog?.projectBaseDivision}}</p>
+                            <hr>
+                            <p>Project Base Centre: {{timelog?.projectBaseCentre}}</p>
+                            <hr>
+                            <p>Project Base Team: {{timelog?.projectBaseTeam}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="selectedGroup === 'Task Information'">
+                            <p>Activity Type: {{timelog?.activityType}}</p>
+                            <hr>
+                            <p>Activity Group: {{timelog?.activityGroup}}</p>
+                            <hr>
+                            <p>Task Type: {{timelog?.taskType}}</p>
+                            <hr>
+                            <p>Task Unique ID: {{timelog?.taskUniqueId}}</p>
+                            <hr>
+                            <p>Task Name: {{timelog?.taskName}}</p>
+                            <hr>
+                            <p>Remark: {{timelog?.remark}}</p>
+                            <hr>
+                            <p>Period: {{timelog?.period}}</p>
+                            <hr>
+                            <p>Time Log Date: {{timelog?.timeLogDate}}</p>
+                            <hr>
+                            <p>Effort: {{timelog?.effort}}</p>
+                            <hr>
+                            <p>Total Effort: {{timelog?.totalEffort}}</p>
+                            <hr>
+                            <p>Created Date: {{timelog?.createdDate}}</p>
+                            <hr>
+                            <p>Updated Time: {{timelog?.updatedTime}}</p>
+                        </ng-container>
+                        <ng-container *ngIf="selectedGroup === 'Support Information'">
+                            <p>Level 1: {{timelog?.level1}}</p>
+                            <hr>
+                            <p>Level 2: {{timelog?.level2}}</p>
+                            <hr>
+                            <p>AM for Bid Support: {{timelog?.amforbidsupport}}</p>
+                            <hr>
+                            <p>AM Business Centre for Bid Support: {{timelog?.ambusinesscentreforbidsupport}}</p>
+                        </ng-container>
+                        <hr>
+                    </div>
+                </ng-template>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fixed inset-0 flex items-center justify-center z-50" [ngClass]="showModal ? 'visible' : 'invisible'">
+    <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
+    <div
+        class="modal-content relative w-3/4 h-3/4 max-w-3xl max-h-3xl bg-gray-100 p-6 rounded-lg shadow-2xl overflow-auto">
+        <div class="box">
+            <!-- Employee Count By Month -->
+            <canvas class="w-1/2" *ngIf="selectedChart === 'line'" baseChart [type]="'line'"
+                [data]="config.data"></canvas>
+            <!-- Employee Count By Activity Type -->
+            <div class="flex items-center justify-center w-1/2 h-1/2 mx-auto" *ngIf="selectedChart === 'doughnut'">
+                
+                <canvas baseChart [type]="'doughnut'" [data]="doughnutChartConfig.data"></canvas>
+                <div class="hidden md:block w-1/2 bg-gray-200 rounded-lg shadow-inner p-4">
+                    <div *ngFor="let label of activityDetailsLabels; let i = index"
+                        class="py-2 border-b border-gray-300 flex justify-between items-center rounded-lg my-2"
+                        [ngStyle]="{'background-color': doughnutChartConfig.data.datasets[0].backgroundColor[i]}">
+                        <span class="font-semibold text-gray-800 pl-2">{{ label }}</span>
+                        <span class="text-gray-800 pr-2">{{ activityDetailsData[i] }}</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Employee Count By Project Manager -->
+            <div class="flex items-center justify-center w-1/2 h-1/2 mx-auto" *ngIf="selectedChart === 'polarArea'">
+                <canvas baseChart [type]="'polarArea'" [data]="polarAreaChartConfig.data"></canvas>
+                <div class="hidden md:block w-1/2 bg-gray-200 rounded-lg shadow-inner p-4">
+                    <div *ngFor="let label of polarAreaChartConfig.data.labels; let i = index"
+                        class="py-2 border-b border-gray-300 flex justify-between items-center rounded-lg my-2"
+                        [ngStyle]="{'background-color': polarAreaChartConfig.data.datasets[0].backgroundColor[i]}">
+                        <span class="font-semibold text-gray-800 pl-2">{{ label }}</span>
+                        <span class="text-gray-800 pr-2">{{ polarAreaChartConfig.data.datasets[0].data[i] }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="modal-close is-large absolute top-0 right-0 m-6" aria-label="close" (click)="closeModal()">
+            <span class="material-symbols-outlined">
+                pinch_zoom_in
+            </span>
+        </button>
+    </div>

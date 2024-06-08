@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="block h-auto md:flex md:w-screen">
+
+    <div class="flex items-center justify-start h-auto md:me-8 md:justify-end">
+        <div
+            class="ml-16 md:mt-0 block md:w-full h-auto p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
+            <app-employeefilters *ngIf="selectedTab === 'employee'"></app-employeefilters>
+            <app-activityfilters *ngIf="selectedTab === 'activity'"></app-activityfilters>
+        </div>
+    </div>
+</div>
+<div style="background-color: #f5f5f7de;">
+    <app-table ngSkipHydration></app-table>
+</div>

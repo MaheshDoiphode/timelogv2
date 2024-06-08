@@ -1,0 +1,6 @@
+FROM postgres
+ENV POSTGRES_PASSWORD=1234
+ENV POSTGRES_USER=user1
+ENV POSTGRES_DB=timelog
+EXPOSE 5432
+WORKDIR /var/lib/postgres/data

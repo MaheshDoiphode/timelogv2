@@ -1,0 +1,80 @@
+//Postgres commands
+CREATE TABLE timelog (
+    employeename TEXT,
+    employeeid TEXT,
+    activitytype TEXT,
+    projectname TEXT,
+    projectcode TEXT,
+    costcentre TEXT,
+    svcdelcentre TEXT,
+    projecttype TEXT,
+    projectmanager TEXT,
+    projectdirector TEXT,
+    projectdeliverylead TEXT,
+    level1 TEXT,
+    level2 TEXT,
+    activitygroup TEXT,
+    tasktype TEXT,
+    taskuniqueid TEXT,
+    taskname TEXT,
+    remark TEXT,
+    period TEXT,
+    timelogdate TIMESTAMP,
+    effort NUMERIC,
+    total_effort NUMERIC,
+    createddate TIMESTAMP,
+    updatedtime TIMESTAMP,
+    homebasedivision TEXT,
+    homebasecentre TEXT,
+    homebaseteam TEXT,
+    projectbasedivision TEXT,
+    projectbasecentre TEXT,
+    projectbaseteam TEXT,
+    joiningdate TIMESTAMP,
+    leavingdate TIMESTAMP,
+    projectplannedeffortsingteledmsonly NUMERIC,
+    amforbidsupport TEXT,
+    ambusinesscentreforbidsupport TEXT
+);
+
+
+//headers
+employeename
+employeeid
+activitytype
+projectname
+projectcode
+costcentre
+svcdelcentre
+projecttype
+projectmanager
+projectdirector
+projectdeliverylead
+level1
+level2
+activitygroup
+tasktype
+taskuniqueid
+taskname
+remark
+period
+timelogdate
+effort
+total effort
+createddate
+updatedtime
+homebasedivision
+homebasecentre
+homebaseteam
+projectbasedivision
+projectbasecentre
+projectbaseteam
+joiningdate
+leavingdate
+projectplannedeffortsingteledmsonly
+amforbidsupport
+ambusinesscentreforbidsupport
+
+//Data
+Random Name 1	XX	PROJECT	P1010E020306R01_IRAS-IRIN3 R3_IN	P1010E020306R01-461	46302552	46302552	E - External Project	Ashish Chouksey			IRIN3	Application Development	Technical Construction	Develop Code and Unit Test		Develop Code and Unit Test		DEC-2023	28-11-2023	8	168	02-11-2023 18:36:21	02-11-2023 18:36:21	APPLICATIONS (APPS) (463072)	46303474	IND_B1AC	APPLICATIONS (APPS) (463072)	46303474	IND_B1AC	10-10-2018		0.00 		
+

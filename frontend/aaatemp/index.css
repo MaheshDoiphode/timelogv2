@@ -1,0 +1,424 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    --rpx: 100vw / 1920;
+}
+
+.main-container {
+    overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.main-container {
+    position: relative;
+    width: calc(1920 * var(--rpx));
+    height: calc(1139 * var(--rpx));
+    margin: 0 auto;
+}
+.group {
+    position: absolute;
+    width: calc(1920 * var(--rpx));
+    height: calc(1139 * var(--rpx));
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+.img {
+    position: absolute;
+    width: calc(965 * var(--rpx));
+    height: calc(1152 * var(--rpx));
+    top: 0;
+    left: calc(955 * var(--rpx));
+    background: url(./assets)
+        no-repeat center;
+    background-size: cover;
+    z-index: 25;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: calc(46.16613006591797 * var(--rpx));
+    position: absolute;
+    width: calc(512.570556640625 * var(--rpx));
+    height: calc(506.0001220703125 * var(--rpx));
+    top: calc(267 * var(--rpx));
+    left: calc(269 * var(--rpx));
+    z-index: 1;
+}
+.group-2 {
+    flex-shrink: 0;
+    position: relative;
+    width: calc(356.2476806640625 * var(--rpx));
+    height: calc(99.85498809814453 * var(--rpx));
+    font-size: 0px;
+    z-index: 2;
+}
+.text {
+    display: block;
+    position: relative;
+    height: calc(70 * var(--rpx));
+    margin: 0 0 0 0;
+    color: #2b3674;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(44.91839599609375 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(69.87305450439453 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: calc(-0.9 * var(--rpx));
+    z-index: 3;
+}
+.text-2 {
+    display: block;
+    position: relative;
+    height: calc(20 * var(--rpx));
+    margin: calc(9.85498046875 * var(--rpx)) 0 0 calc(1.24755859375 * var(--rpx));
+    color: #a3aed0;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(19.96373176574707 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(19.96373176574707 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: calc(-0.4 * var(--rpx));
+    z-index: 4;
+}
+.group-3 {
+    flex-shrink: 0;
+    position: relative;
+    width: calc(512.570556640625 * var(--rpx));
+    height: calc(359.97900390625 * var(--rpx));
+    z-index: 5;
+}
+.group-4 {
+    position: relative;
+    width: calc(511.5705871582031 * var(--rpx));
+    height: calc(96.07545471191406 * var(--rpx));
+    margin: 0 0 0 calc(1 * var(--rpx));
+    z-index: 18;
+    overflow: visible auto;
+}
+.box {
+    position: relative;
+    width: calc(86 * var(--rpx));
+    height: calc(17 * var(--rpx));
+    margin: 0 0 0 0;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17 * var(--rpx));
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 19;
+}
+.text-3 {
+    position: relative;
+    color: #2b3674;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.468263626098633 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.text-4 {
+    position: relative;
+    color: #4318ff;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.468263626098633 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.section-2 {
+    position: relative;
+    width: calc(511.5705871582031 * var(--rpx));
+    height: calc(62.386653900146484 * var(--rpx));
+    margin: calc(16.68896484375 * var(--rpx)) 0 0 0;
+    z-index: 20;
+    overflow: visible auto;
+}
+.group-5 {
+    position: relative;
+    width: calc(199 * var(--rpx));
+    height: calc(17 * var(--rpx));
+    margin: calc(21.21142578125 * var(--rpx)) 0 0
+        calc(29.94580078125 * var(--rpx));
+    z-index: 23;
+}
+.text-5 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: calc(17 * var(--rpx));
+    top: calc(50% - calc(8.5 * var(--rpx)));
+    left: 0;
+    color: #a3aed0;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 24;
+}
+.group-6 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 21;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.section-3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: calc(1.247733235359192 * var(--rpx)) solid #e0e5f2;
+    z-index: 22;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.section-4 {
+    position: relative;
+    width: calc(511.5705871582031 * var(--rpx));
+    height: calc(96.07545471191406 * var(--rpx));
+    margin: calc(27.903549194335938 * var(--rpx)) 0 0 0;
+    z-index: 10;
+    overflow: visible auto;
+}
+.section-5 {
+    position: relative;
+    width: calc(82 * var(--rpx));
+    height: calc(17 * var(--rpx));
+    margin: 0 0 0 0;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17 * var(--rpx));
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 11;
+}
+.text-6 {
+    position: relative;
+    color: #2b3674;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.468263626098633 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.text-7 {
+    position: relative;
+    color: #4318ff;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17.468263626098633 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.group-7 {
+    position: absolute;
+    width: calc(511.5705871582031 * var(--rpx));
+    height: calc(62.386653900146484 * var(--rpx));
+    top: calc(33.68896484375 * var(--rpx));
+    left: 0;
+    z-index: 12;
+}
+.box-2 {
+    position: relative;
+    width: calc(129 * var(--rpx));
+    height: calc(17 * var(--rpx));
+    margin: calc(21.21142578125 * var(--rpx)) 0 0
+        calc(29.94580078125 * var(--rpx));
+    z-index: 15;
+}
+.text-8 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: calc(17 * var(--rpx));
+    top: calc(50% - calc(8.5 * var(--rpx)));
+    left: 0;
+    color: #a3aed0;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17 * var(--rpx));
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 16;
+}
+.group-8 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 13;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: calc(1.247733235359192 * var(--rpx)) solid #e0e5f2;
+    z-index: 14;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.img-2 {
+    position: absolute;
+    width: calc(24.95466423034668 * var(--rpx));
+    height: calc(24.95466423034668 * var(--rpx));
+    top: calc(54.900390625 * var(--rpx));
+    left: calc(464.15625 * var(--rpx));
+    background: url(./assets/eye.svg)
+        no-repeat center;
+    background-size: cover;
+    z-index: 17;
+    overflow: hidden;
+}
+.group-9 {
+    position: relative;
+    width: calc(511.57061767578125 * var(--rpx));
+    height: calc(67.37759399414062 * var(--rpx));
+    margin: calc(11.853256225585938 * var(--rpx)) 0 0 0;
+    z-index: 7;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.box-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: calc(12.47733211517334 * var(--rpx));
+    position: absolute;
+    height: calc(67.37759399414062 * var(--rpx));
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: calc(12.47733211517334 * var(--rpx))
+        calc(9.981865882873535 * var(--rpx)) calc(12.47733211517334 * var(--rpx))
+        calc(9.981865882873535 * var(--rpx));
+    background: #4218ff;
+    z-index: 8;
+    border-radius: calc(19.96373176574707 * var(--rpx));
+}
+.text-9 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    width: calc(51 * var(--rpx));
+    height: calc(17 * var(--rpx));
+    color: #ffffff;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468265533447266 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(17 * var(--rpx));
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 9;
+}
+.section-6 {
+    position: relative;
+    width: calc(290 * var(--rpx));
+    height: calc(33 * var(--rpx));
+    margin: calc(27.693695068359375 * var(--rpx)) 0 0 0;
+    font-family: DM Sans, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 700;
+    line-height: calc(32.441062927246094 * var(--rpx));
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    letter-spacing: calc(-0.35 * var(--rpx));
+    z-index: 6;
+}
+.text-a {
+    position: relative;
+    color: #2b3674;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(32.441062927246094 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.text-b {
+    position: relative;
+    color: #707eae;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(32.441062927246094 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.text-c {
+    position: relative;
+    color: #4218ff;
+    font-family: Ubuntu, var(--default-font-family);
+    font-size: calc(17.468263626098633 * var(--rpx));
+    font-weight: 400;
+    line-height: calc(32.441062927246094 * var(--rpx));
+    text-align: left;
+    letter-spacing: calc(-0.35 * var(--rpx));
+}
+.pic {
+    position: absolute;
+    width: calc(488 * var(--rpx));
+    height: calc(131 * var(--rpx));
+    top: calc(348 * var(--rpx));
+    left: calc(1194 * var(--rpx));
+    background: url(./assets/ncs-logo-1.png)
+        no-repeat center;
+    background-size: cover;
+    z-index: 26;
+}
+.pic-2 {
+    position: absolute;
+    width: calc(300 * var(--rpx));
+    height: calc(300 * var(--rpx));
+    top: calc(479 * var(--rpx));
+    left: calc(1267 * var(--rpx));
+    background: url(./assets/image-4.png)
+        no-repeat center;
+    background-size: cover;
+    z-index: 27;
+}

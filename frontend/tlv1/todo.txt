@@ -1,0 +1,23 @@
+Bar Chart or Pie Chart for Activity Type: This can provide a quick overview of the distribution of different types of activities.
+
+Time Series for Effort: Plotting the ‘Effort’ column against the ‘Timelog Date’ can show how the effort varies over time. This could be done for each ‘Employee Name’ to compare their workloads.
+
+Stacked Bar Chart for Project Effort: You can create a stacked bar chart with ‘Project Name’ on the x-axis and ‘Effort’ on the y-axis. Each bar could be divided by ‘Activity Type’ to show the distribution of effort within each project.
+
+Heatmap for Project and Task Type: A heatmap could be used to show the relationship between ‘Project Name’ and ‘Task Type’, with the color intensity representing the ‘Total Effort’.
+
+Scatter Plot for Joining Date vs Total Effort: This can help in analyzing if there’s any correlation between when an employee joined and the total effort they have put in.
+
+Gantt Chart: This can be used to visualize project timelines, including the start and end dates of individual tasks within the project. It can be particularly useful for project management.
+
+Bubble Chart: This is a variation of the scatter plot. In addition to the ‘x’ and ‘y’ axis, the bubble chart represents a third dimension through the size of the bubbles. You could use this to represent three variables - for example, ‘Effort’, ‘Task Type’, and ‘Total Effort’.
+
+Tree Map: This can be used to represent hierarchical data. Each section of the tree map represents a category, and the size of the section corresponds to its proportion in the whole. This could be used to visualize the ‘Project Name’ hierarchy with ‘Effort’ as the size.
+
+Chord Diagram: This is a complex visualization that allows you to visualize relationships or connections between entities. You could use this to show the relationship between ‘Employee Name’ and ‘Project Name’, with the thickness of the chords representing the ‘Total Effort’.
+
+Sankey Diagram: This can be used to visualize flow and proportion in a system. The width of the arrows or lines are used to show their magnitude, so the wider the arrow, the larger the quantity of flow. You could use this to show the flow of ‘Effort’ between different ‘Projects’ and ‘Task Types’.
+
+
+
+EMPLOYEEID	EMPLOYEENAME	PROJECTNAME	ACTIVITYTYPE	PROJECTMANAGER	PERIOD	TIMELOGDATE	CREATEDDATE	TOTALEFFORT	EFFORT	UPDATEDTIME	JOININGDATE

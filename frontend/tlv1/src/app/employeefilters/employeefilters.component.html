@@ -1,0 +1,69 @@
+<div class="md:flex w-auto p-1 pb-8 justify-center">
+    <!-- Dropdown 1 for project menu-->
+    <div class="projectname h-4 w-auto m-2">
+        <div class="relative">
+            <button (click)="toggleMenu(projectmenu)" type="button"
+                class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
+                aria-expanded="false">
+                <span>PROJECT MENU</span>
+                <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div *ngIf="projectmenu.state"
+                class="absolute left-auto ml-28 z-10 m-5 flex w-auto max-w-min -translate-x-1/2 px-1">
+                <div
+                    class="w-screen max-w-xs flex items-start justify-start overflow-hidden rounded-3xl bg-white text-sm shadow-lg ring-1 ring-gray-900/5">
+                    <div class="">
+                        <!--  -->
+                        <div class="group relative flex rounded-lg p-4 hover:bg-gray-50"
+                            *ngFor="let item of projectmenu.items">
+                            <div
+                                class="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                            </div>
+                            <div class="ml-4">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600"
+                                    [checked]="item.checked" (change)="onCheckboxChange($event, item, projectmenu)" />
+                                <label class="ml-2 text-gray-700 font-semibold">{{item.text}}</label>
+                                <p class="mt-1 text-gray-600">{{item.value}}</p>
+                            </div>
+                        </div>
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Datepicker -->
+    <div class="datepicker h-4 w-auto m-2 mt-12 md:mt-0">
+        <mat-form-field class="md:flex">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                <input matStartDate formControlName="start" placeholder="Start date">
+                <input matEndDate formControlName="end" placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+            @if (range.controls.start.hasError('matStartDateInvalid')) {
+            <mat-error>Invalid start date</mat-error>
+            }
+            @if (range.controls.end.hasError('matEndDateInvalid')) {
+            <mat-error>Invalid end date</mat-error>
+            }
+        </mat-form-field>
+        <!-- <p>Selected range: {{range.value | json}}</p> -->
+    </div>
+</div>
+<!-- search button -->
+<button type="button" (click)="search()"
+    class="inline-flex mt-8 md:mt-auto items-center text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+    <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+        viewBox="0 0 18 18">
+        <path
+            d="M12.5 11h-.79l-.28-.27A6.471 6.471 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.471 6.471 0 0 0 4.23-1.57l.27.28v.79l5 4.99L17.49 16l-4.99-5zm-6 0C7.33 11 9 8.33 9 5.5S7.33 0 4.5 0 0 2.67 0 5.5 2.67 11 4.5 11z" />
+    </svg>
+    Search
+</button>

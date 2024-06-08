@@ -1,0 +1,38 @@
+<div class="charts">
+    <div class="linechart">
+        <div class="w-sm md:h-full md:max-w-md w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+            <div class="flex justify-between">
+                <div>
+                    <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">Employees</h5>
+                    <p class="text-base font-normal text-gray-500 dark:text-gray-400">Last 12 months</p>
+                </div>
+                <div class="flex items-center px-2.5 py-0.5 text-base font-semibold cursor-pointer text-center"
+                    (click)="openModal()">
+                    <span class="material-symbols-outlined">
+                        pinch_zoom_out
+                    </span>
+                </div>
+            </div>
+            <div class="line-chart">
+                <canvas baseChart [type]="'line'" [data]="config.data"></canvas>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fixed inset-0 flex items-center justify-center z-50" [ngClass]="showModal ? 'visible' : 'invisible'">
+    <div class="modal-background absolute inset-0 bg-black opacity-50"></div>
+    <div class="modal-content relative w-3/4 h-3/4 max-w-3xl max-h-3xl bg-white p-6 rounded shadow-lg overflow-auto">
+        <div class="box">
+            <canvas baseChart [type]="'line'" [data]="config.data"></canvas>
+        </div>
+        <button class="modal-close is-large absolute top-0 right-0 m-6" aria-label="close" (click)="closeModal()">
+            <span class="material-symbols-outlined">
+                pinch_zoom_in
+            </span>
+        </button>
+    </div>
+</div>

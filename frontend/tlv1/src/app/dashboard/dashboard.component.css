@@ -1,0 +1,24 @@
+.bg-pattern {
+    @apply relative w-60 h-60;
+    position: relative;
+}
+
+.bg-pattern::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 59%; 
+    height: 59%; 
+    background-image: radial-gradient(circle, #ff0000 1px, transparent 3px);
+    background-size: 10px 10px;
+}
+
+.bg-pattern img {
+    @apply absolute bottom-12 right-12;
+}
+
+
+.grid {
+    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  }

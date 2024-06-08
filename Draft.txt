@@ -1,0 +1,7 @@
+Time log  -> 
+
+
+Requirements ---
+
+
+Employee Name	Employee ID	Activity Type	Project Name	Project Code	Cost Centre	Svc Del Centre	Project Type	Project Manager	Project Director	Project Delivery Lead	Level 1	Level 2	Activity Group	Task Type	Task Unique ID	Task Name	Remark	Period	Timelog Date	Effort	Total Effort	Created Date	Updated Time	Home Base Division	Home Base Centre	Home Base Team	Project Base Division	Project Base Centre	Project Base Team	Joining Date	Leaving Date	Project Planned Effort(Singtel EDMS Only)	AM (for Bid Support)	AM business centre(for Bid Support)	

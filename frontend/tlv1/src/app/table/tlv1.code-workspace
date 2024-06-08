@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"path": "../../../../backend"
+		},
+		{
+			"path": "../../../../../../testingpython"
+		},
+		{
+			"path": "../../../../../../AI"
+		},
+		{
+			"path": "../../../../../../Learning/kubeinfo"
+		}
+	],
+	"settings": {
+		"intellicode-completions-cdk.runAlongsideCopilot": true
+	}
+}
